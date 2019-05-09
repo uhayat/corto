@@ -1001,8 +1001,8 @@ void corto_environment_init(void)
     }
 
     if (!ut_getenv("HOSTNAME")) {
-        corto_id hostname;
-        gethostname(hostname, sizeof(hostname));
+        char* hostname;
+        hostname = ut_hostname();
         ut_setenv("HOSTNAME", hostname);
     }
 
