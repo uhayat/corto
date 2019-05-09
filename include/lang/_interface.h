@@ -5,6 +5,12 @@
 #ifndef CORTO_LANG_INTERFACE_H
 #define CORTO_LANG_INTERFACE_H
 
+#ifdef _WIN32
+#ifdef interface
+    #undef interface
+#endif
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif
