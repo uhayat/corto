@@ -23,6 +23,10 @@
 #include "src/store/object.h"
 #include "src/lang/primitive.h"
 
+#ifdef _WIN32
+#include <inttypes.h>
+#endif
+
 typedef corto_int16 ___ (*corto_conversion)(corto_primitive fromType, void* from, corto_primitive toType, void* to);
 
 static corto_conversion _conversions[CORTO_PRIMITIVE_MAX_CONVERTID+1][CORTO_PRIMITIVE_MAX_CONVERTID+1];
