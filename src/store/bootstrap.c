@@ -1427,7 +1427,11 @@ int corto_stop(void)
      * enable this by default as it will exit the process with exit status 0,
      * which prevents the application from specifying a custom exit code. */
     if (CORTO_COLLECT_TLS) {
+#ifdef _WIN32
+        _endthread();
+#else
         pthread_exit(0);
+#endif
     }
 
     return 0;
